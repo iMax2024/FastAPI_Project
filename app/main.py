@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-
-from app.routers import categories, products, users, reviews
+from app.routers import cart, categories, orders, payments, products, users, reviews
+from fastapi.staticfiles import StaticFiles
 
 
 # Создаём приложение FastAPI
@@ -14,6 +14,10 @@ app.include_router(categories.router)
 app.include_router(products.router)
 app.include_router(users.router)
 app.include_router(reviews.router)
+app.include_router(cart.router)
+app.include_router(orders.router)
+app.mount("/media", StaticFiles(directory="media"), name="media")
+app.include_router(payments.router)
 
 # Корневой эндпоинт для проверки
 @app.get("/")
