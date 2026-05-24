@@ -1,0 +1,5 @@
+Log: [72af7ed6-8719-4a3c-87d8-32b0c25acab9:2026-05-24T12:53:09.246565+0300 - INFO - Successfully accessed /docs]
+Log: [3a148c2c-93f5-4711-9938-b1db8278d1d3:2026-05-24T12:53:09.453113+0300 - INFO - Successfully accessed /openapi.json]
+Log: [eac16459-674a-4546-9ead-7a497357262a:2026-05-24T12:53:22.496968+0300 - INFO - Successfully accessed /categories/]
+Log: [5cc0811a-93a3-469f-94ad-653c713666cf:2026-05-24T12:53:42.404868+0300 - WARNING - Request to /test failed]
+Log: [aa41e322-fb60-4e52-8e7c-fc2ec8eb2713:2026-05-24T12:55:43.140962+0300 - INFO - Successfully accessed /categories/]
