@@ -1,0 +1,31 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
+    command: uvicorn app.main:app --host 0.0.0.0
+    ports:
+      - 8000:8000
+    # ДОБАВЛЕНО: Явно передаем переменные окружения в веб-приложение
+    environment:
+      - POSTGRES_USER=ecommerce_user
+      - POSTGRES_PASSWORD=Fcsm1922
+      - POSTGRES_DB=ecommerce_db
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      # Если ваше приложение использует готовую строку подключения, раскомментируйте строку ниже:
+      # - DATABASE_URL=postgresql+asyncpg://ecommerce_user:Fcsm1922@db:5432/ecommerce_db
+    depends_on:
+      - db
+
+  db:
+    image: postgres:18
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    environment:
+      - POSTGRES_USER=ecommerce_user
+      - POSTGRES_PASSWORD=Fcsm1922
+      - POSTGRES_DB=ecommerce_db
+
+volumes:
+  postgres_data:
